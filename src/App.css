@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
 }
@@ -21,7 +22,17 @@
 .App-link {
   color: #61dafb;
 }
+svg{
+  width:33%
+}
 
+.btn1{
+  color:white
+}
+.btn1:checked {
+  color:black;
+  background-color: yellow
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -29,4 +40,11 @@
   to {
     transform: rotate(360deg);
   }
+}
+#components-layout-demo-top .logo {
+  width: 120px;
+  height: 31px;
+  background: rgba(255,255,255,.2);
+  margin: 16px 24px 16px 0;
+  float: left;
 }
