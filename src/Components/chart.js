@@ -21,7 +21,7 @@ class Chart extends Component{
     data={{
       variables: [
         {key: 'Service', label: 'Service'},
-        {key: 'Product', label: 'Product'},
+        {key: 'Game', label: 'Game'},
         {key: 'Place', label: 'Place'},
         {key: 'Company', label: 'Company'},
         {key: 'Website', label: 'Website'}

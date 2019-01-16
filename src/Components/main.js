@@ -22,12 +22,7 @@ class Main extends Component {
       state1:"",
       counter:0
     })
-    fetch("")
-      .then(response=>console.log(response))
-      .catch(error=>console.log(error))
-
       this.handleRemove=this.handleRemove.bind(this);
-
       this.increment=this.increment.bind(this);
       this.decrement=this.decrement.bind(this);
   }
@@ -55,21 +50,21 @@ class Main extends Component {
       <div className="App">
 
       <h1>Player Card</h1>
-      <PlayerCard player={this.props.Player[this.state.counter&& this.state.counter]} />
-
-        {!this.state.counter==0 && this.state.counter?<Button type="primary" onClick={this.decrement}  style={{zindex:2}}>
+      <div style={{paddingLeft:450,marginBottom:50}} >
+        <PlayerCard player={this.props.Player[this.state.counter&& this.state.counter]} />
+      </div>
+            <div style={{margin:"50",opacity:1,}}>
+        {!this.state.counter==0 && this.state.counter?<Button type="primary" onClick={this.decrement}  style={{zindex:2,width:170}}>
             <Icon type="left" />Backward
           </Button>: <Button type="primary" disabled><Icon type="left" />Backward</Button>}
 
-
-
-          {this.props.Player.length>this.state.counter+1? <Button type="primary" onClick={this.increment}>
+          {this.props.Player.length>this.state.counter+1? <Button type="primary" onClick={this.increment} style={{zindex:2,width:180}}>
             Forward<Icon type="right" />
           </Button>: <Button type="primary" disabled><Icon type="left" />Forward</Button>}
 
           <h2>{this.props.Player[this.state.counter&& this.state.counter]? this.props.Player[this.state.counter&& this.state.counter].name:this.props.Player[this.state.counter-1 && this.state.counter-1].name}</h2>
           <Button onClick={this.handleRemove}>Remove Player </Button>
-
+          </div>
       </div>
     );
   }

@@ -9,7 +9,6 @@ const list=[[],[],[],[],[],[]];
 class Game extends Component{
 
 componentDidMount(){
-  this.myRef = React.createRef();
   for (let i = 0; i < list.length  ; i++) {
     for(let j=0;j<10;j++){
       let z=Math.floor(Math.random() * 5);
@@ -37,9 +36,30 @@ componentDidMount(){
   }
 
   }
+  for(let i=0;i<board.length;i++){
+    for(let j=0;j<10;j++){
+      let c=0;
+      if(board[i][j+1]==0){c+=1}
+      if(board[i][j-1]==0){c+=1}
+      if(i>0){
+        board[i-1][j]==0? c=c+1:c=c;
+        j>0? board[i-1][j-1]==0?c=c+1:c=c:c=c;
+        j<10? board[i-1][j+1]==0?c=c+1:c=c:c=c
+      }
+      if(i<3){
+        board[i+1][j]==0? c=c+1:c=c;
+        j>0? board[i+1][j-1]==0?c=c+1:c=c:c=c;
+        j<9? board[i+1][j+1]==0?c=c+1:c=c:c=c
+      }
+
+      if (board[i][j]==0){list[i][j]="x"}
+      else{list[i][j]=c}
+  }
+
+  }
   for (let i = 0; i < list.length  ; i++) {
     for(let j=0;j<10;j++){
-      board[i][j]=(<Button onClick={this.handleClick1} style={{width:"60px",height:"50px"}} ref={"S"} value={list[i][j]}><h5 style={{color:"white"}} id={list[i][j]} ref={[list[i],list[j]]} >{list[i][j]}</h5></Button>)
+      board[i][j]=(<Button onClick={this.handleClick1} style={{width:"60px",height:"50px",color:"white"}} value={list[i][j]}>{list[i][j]}</Button>)
   }}
 this.handleClick1=this.handleClick1.bind(this);
 }

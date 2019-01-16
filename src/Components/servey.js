@@ -13,7 +13,7 @@ for (let i = 0; i < 11  ; i++) {
 class Servey extends Component{
   state={
     Service:0,
-    Product:0,
+    Game:0,
     Website:0,
     Company:0,
     Place:0
@@ -27,7 +27,7 @@ class Servey extends Component{
 
     this.setState({
       Service:0,
-      Product:0,
+      Game:0,
       Website:0,
       Company:0,
       Place:0
@@ -46,7 +46,7 @@ class Servey extends Component{
   }
   handleChange3(e){
     this.setState({
-      Product:e
+      Game:e
     })
   }
   handleChange4(e){
@@ -63,7 +63,7 @@ class Servey extends Component{
   render(){
     return(
       <div>
-
+      <h1> Please fill this servey</h1>
       <Form>
 
         <Col span={12}>
@@ -85,7 +85,7 @@ class Servey extends Component{
             </Select>
       </Form.Item>
 
-      <Form.Item label="product" labelCol={{ span: 3 }} wrapperCol={{ span: 2 }}>
+      <Form.Item label="Game" labelCol={{ span: 3 }} wrapperCol={{ span: 2 }}>
             <Select
             defaultValue={0}
               placeholder="choose ur answer"
@@ -112,7 +112,7 @@ class Servey extends Component{
       </Col>
       </Form>
       <Col span={12}>
-     <Chart values={{Service:this.state.Service,Product:this.state.Product,Website:this.state.Website,Place:this.state.Place,Company:this.state.Company}}/>
+     <Chart values={{Service:this.state.Service,Game:this.state.Game,Website:this.state.Website,Place:this.state.Place,Company:this.state.Company}}/>
 </Col>
       </div>
     )
