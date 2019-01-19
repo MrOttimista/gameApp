@@ -43,7 +43,7 @@ render(){
             <Menu.Item key="4"><Link to="/Game">Game</Link></Menu.Item>
        </Menu>
      </Header>
-<Content style={{ padding: '0 50px' }}>
+<Content style={{ padding: '0 50px',height:"100%",float:"auto"}}>
 
 
      <Route exact path="/" />
@@ -51,8 +51,6 @@ render(){
      <Route exact path="/Players/" component={PlayerApp} />
      <Route exact path="/Servey/" component={servey}/>
      <Route exact path="/Game/" component={Game}/>
-
-
 
 </Content>
  </Layout>

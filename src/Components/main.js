@@ -8,6 +8,7 @@ import {store} from "../Reducers/PlayersReducers";
 import {addingPlayer, removePlayer,testAction} from "../Actions/addingPlayer";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import PlayerCard from "./card";
+const axios = require('axios');
 
 
 class Main extends Component {
@@ -25,6 +26,14 @@ class Main extends Component {
       this.handleRemove=this.handleRemove.bind(this);
       this.increment=this.increment.bind(this);
       this.decrement=this.decrement.bind(this);
+
+      axios.get("https://dog.ceo/api/breeds/image/random")
+      .then(function(response){
+        console.log(response);
+      })
+      .catch(function(error){
+        console.log(error)
+      })
   }
 
 

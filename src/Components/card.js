@@ -9,6 +9,7 @@ import {store} from "../Reducers/PlayersReducers";
 import {addingPlayerAction, removePlayer} from "../Actions/addingPlayer";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 const { Meta } = Card;
+let x="https://avatars.dicebear.com/v2/male/"+Math.floor(Math.random() * 5)+".svg"
 
 class PlayerCard extends Component{
 
@@ -18,7 +19,7 @@ class PlayerCard extends Component{
       <Card
     hoverable
     style={{width:300 , marginLeft:270,color:"blue"}}
-    cover={<img alt="example" src="https://vignette.wikia.nocookie.net/animal-jam-clans-1/images/3/34/92f1345a31e8f70f9569c2d7fc8ee7d3.png/revision/latest?cb=20170618014458" />}
+    cover={<img alt="example" src={x} />}
   >
     <Meta
       title={this.props.player? this.props.player.name: "no"}
