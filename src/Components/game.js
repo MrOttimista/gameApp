@@ -11,7 +11,7 @@ class Game extends Component{
 componentDidMount(){
   for (let i = 0; i < list.length  ; i++) {
     for(let j=0;j<10;j++){
-      let z=Math.floor(Math.random() * 4);
+      let z=Math.floor(Math.random() * 5);
       z!=3? board[i].push(1):board[i].push(0);
   }}
 
