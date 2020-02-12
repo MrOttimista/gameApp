@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import {store} from "../Reducers/PlayersReducers";
-import { Button,Icon,Row } from 'antd';
+import { Button } from 'antd';
 
 const board=[[],[],[],[],[],[]];
 const list=[[],[],[],[],[],[]];
 
 class Game extends Component{
+  constructor(props) {
+    super(props);
+    this.state = {board:[]};
+  }
 
 componentDidMount(){
   for (let i = 0; i < list.length  ; i++) {
@@ -39,7 +41,9 @@ componentDidMount(){
   for (let i = 0; i < list.length  ; i++) {
     for(let j=0;j<10;j++){
       board[i][j]=(<Button onClick={this.handleClick1} style={{width:"60px",height:"50px",color:"white"}} key="{list[i][j]}" value={list[i][j]}>{list[i][j]}</Button>)
-  }}
+  }
+  this.setState({board})
+}
 this.handleClick1=this.handleClick1.bind(this);
 }
 
@@ -84,7 +88,6 @@ render(){
     <div style={{width:"600px",margin:"100px 100px 600px 100px", border:"10px"}}>
       <div>
       {board}
-
       </div>
       <h3>press (Ctrl + mouse click) to flag</h3>
     </div>
