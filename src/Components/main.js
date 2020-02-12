@@ -56,12 +56,12 @@ class Main extends Component {
   render() {
 
     return (
-      <div className="App">
+      <Row className="App" style={{width:"100%"}}>
 
       <h1>Player Card</h1>
-      <div style={{paddingLeft:450,marginBottom:50}} >
+      <Row style={{paddingLeft:"40%",marginBottom:"3%"}} >
         <PlayerCard player={this.props.Player[this.state.counter&& this.state.counter]} />
-      </div>
+      </Row>
             <div style={{margin:"50",opacity:1,}}>
         {!this.state.counter==0 && this.state.counter?<Button type="primary" onClick={this.decrement}  style={{zindex:2,width:170}}>
             <Icon type="left" />Backward
@@ -74,7 +74,7 @@ class Main extends Component {
           <h2>{this.props.Player[this.state.counter&& this.state.counter]? this.props.Player[this.state.counter&& this.state.counter].name:this.props.Player[this.state.counter-1 && this.state.counter-1].name}</h2>
           <Button onClick={this.handleRemove}>Remove Player </Button>
           </div>
-      </div>
+      </Row>
     );
   }
 }
