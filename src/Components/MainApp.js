@@ -43,7 +43,7 @@ render(){
             <Menu.Item key="4"><Link to="/Game">Game</Link></Menu.Item>
        </Menu>
      </Header>
-<Content style={{ padding: '0 50px',height:"100%",float:"auto"}}>
+<Content style={{ padding: '0 50px',height:"100%",float:"auto",width:"100%"}}>
 
 
      <Route exact path="/" />
