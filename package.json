@@ -6,7 +6,7 @@
 
   "dependencies": {
     "antd": "^3.10.9",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "gh-pages": "^2.0.1",
     "material-ui": "^0.20.2",
     "react": "^16.6.3",
